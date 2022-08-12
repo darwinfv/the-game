@@ -1,0 +1,11 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  font-size: 150px;
+  border: 1px solid;
+  border-radius: 15px;
+}
+
+.card .top {
+  align-items: space-between;
+}
