@@ -6,6 +6,8 @@
   border-radius: 15px;
 }
 
-.card .top {
-  align-items: space-between;
+.card .row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 30px;
 }
