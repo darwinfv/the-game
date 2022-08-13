@@ -5,6 +5,11 @@ import { generateDeck } from 'helpers';
 function App() {
 
   let deck = generateDeck();
+  let hand = [];
+
+  for (let i = 0; i < 8; i++) {
+    hand.push(deck.pop());
+  }
 
   return (
     <div>

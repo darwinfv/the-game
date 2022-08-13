@@ -20,3 +20,19 @@
   justify-content: space-between;
   font-size: 1vw;
 }
+
+.arrow {
+  margin-top: 1vw;
+  display: flex;
+}
+
+.up,.down {
+  line-height: 80%;
+  margin: 12px 0 12px;
+}
+
+.down {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
