@@ -20,7 +20,14 @@ function App() {
         <Card number='100' down />
       </div>
       <div id='player'>
-        <Card number='100' drag/>
+        <Card number={hand[0]} drag />
+        <Card number={hand[1]} drag />
+        <Card number={hand[2]} drag />
+        <Card number={hand[3]} drag />
+        <Card number={hand[4]} drag />
+        <Card number={hand[5]} drag />
+        <Card number={hand[6]} drag />
+        <Card number={hand[7]} drag />
       </div>
     </div>
   );
