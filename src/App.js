@@ -1,7 +1,11 @@
 import 'App.css';
 import Card from 'components/Card';
+import { generateDeck } from 'helpers';
 
 function App() {
+
+  let deck = generateDeck();
+
   return (
     <div>
       <div id="game">
