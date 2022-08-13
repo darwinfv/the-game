@@ -3,10 +3,16 @@ import Card from 'components/Card';
 
 function App() {
   return (
-    <div className="App">
-      {/* <header className="App-header"> */}
-        <Card number="32" />
-      {/* </header> */}
+    <div>
+      <div id="game">
+        <Card number="1" up />
+        <Card number="1" up />
+        <Card number="100" down />
+        <Card number="100" down />
+      </div>
+      <div id="player">
+        <Card number="100" drag/>
+      </div>
     </div>
   );
 }

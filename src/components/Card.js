@@ -7,7 +7,9 @@ function Card({ number }) {
         <p>{ number }</p>
         <p>{ number }</p>
       </div>
-      <p>{ number }</p>
+      <div className="num">
+        <p>{ number }</p>
+      </div>
       <div className="row">
         <p>{ number }</p>
         <p>{ number }</p>
