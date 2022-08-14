@@ -17,6 +17,7 @@ p {
 }
 
 #game {
+  margin: 2%;
   display: flex;
   justify-content: space-evenly;
 }
@@ -24,4 +25,5 @@ p {
 #player {
   display: flex;
   flex-wrap: nowrap;
+  justify-content: center;
 }

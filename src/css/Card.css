@@ -32,7 +32,6 @@
 }
 
 .arrow {
-  margin-top: 1vw;
   display: flex;
   user-select: none;
 }

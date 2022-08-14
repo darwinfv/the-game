@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 export function click(event, data) {
   console.log(event, data);
   let parent = getParent(event.target);
