@@ -1,10 +1,13 @@
 import 'css/Card.css'
 import Draggable from 'react-draggable';
+import { click, trackPosition } from 'eventHandlers';
 
-function Card({ number, up, down, drag }) {
+function Card({ number, up, down, draggable }) {
   return (
     <Draggable
-      disabled={drag ? false : true}
+      onDrag={(e, data) => trackPosition(e, data)}
+      disabled={draggable ? false : true}
+      onStart={click}
     >
       <div className='arrow'>
         {
