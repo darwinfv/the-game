@@ -4,6 +4,7 @@ import { generateDeck } from 'helpers';
 
 const props = {
   draggable: true,
+  id: 'app'
 };
 
 function App() {

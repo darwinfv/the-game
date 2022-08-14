@@ -11,6 +11,15 @@
   aspect-ratio: 2 / 3;
 }
 
+#player .card:hover {
+  border: 1px solid burlywood;
+}
+
+#player .card:active {
+  border: 1px solid burlywood;
+  box-shadow: -10px 10px 5px grey;
+}
+
 .card .num {
   font-size: 6vw;
 }
@@ -25,6 +34,7 @@
 .arrow {
   margin-top: 1vw;
   display: flex;
+  user-select: none;
 }
 
 .up,.down {
