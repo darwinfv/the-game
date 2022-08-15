@@ -4,15 +4,24 @@ export function click(event, data) {
 }
 
 export function drop(event, data) {
-  let parent = getParent(event.target);
-  parent.style.zIndex = 0;
+  let card = checkHover(event.pageX, event.pageY)
+  if (card) {
+    let parent = getParent(event.target)
+    changeNumber(card, parent.childNodes[0].childNodes[0].childNodes[0].innerHTML);
+    parent.style.transform = 'translate(0, 0)';
+    card.style.backgroundColor = 'white';
+    return true;
+  } else {
+      let parent = getParent(event.target);
+      parent.style.zIndex = 0;
+  }
 }
 
-export function track(e, data) {
+export function track(event, data) {
   // setPosition({ x: data.x, y: data.y });
   // console.log(e.pageX, e.pageY);
 
-  let card = checkHover(e.pageX, e.pageY)
+  let card = checkHover(event.pageX, event.pageY)
   if (card) {
     flicker(card);
   }
@@ -20,6 +29,14 @@ export function track(e, data) {
 
 function flicker(element) {
   element.style.backgroundColor = 'grey';
+}
+
+function changeNumber(element, number) {
+  element.childNodes[0].childNodes[0].innerHTML = number;
+  element.childNodes[0].childNodes[1].innerHTML = number;
+  element.childNodes[1].childNodes[0].innerHTML = number;
+  element.childNodes[2].childNodes[0].innerHTML = number;
+  element.childNodes[2].childNodes[1].innerHTML = number;
 }
 
 function checkHover(x, y) {
