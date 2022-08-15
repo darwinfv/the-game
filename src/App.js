@@ -5,7 +5,6 @@ import { useState } from 'react';
 
 const props = {
   draggable: true,
-  id: 'app'
 };
 
 function App() {
@@ -16,27 +15,43 @@ function App() {
     player.push(cards.pop());
   }
 
-  const [stack, setStack] = useState([1, 1, 100, 100]);
   const [deck, setDeck] = useState(cards);
   const [hand, setHand] = useState(player);
+
+  function draw(number) {
+    let card = deck.pop();
+    setDeck(deck);
+    
+    let index = 0;
+    for (let i = 0; i < hand.length; i++) {
+      if (hand[i] === number) {
+        index = i;
+        break;
+      }
+    }
+
+    let player = hand;
+    player[index] = card;
+    setHand(player.slice());
+  }
 
   return (
     <div>
       <div id='game'>
-        <Card number={ stack[0] } up />
-        <Card number={ stack[1] } up />
-        <Card number={ stack[2] } down />
-        <Card number={ stack[3] } down />
+        <Card number={1} up />
+        <Card number={1} up />
+        <Card number={100} down />
+        <Card number={100} down />
       </div>
       <div id='player'>
-        <Card number={ hand[0] } { ...props } />
-        <Card number={ hand[1] } { ...props } />
-        <Card number={ hand[2] } { ...props } />
-        <Card number={ hand[3] } { ...props } />
-        <Card number={ hand[4] } { ...props } />
-        <Card number={ hand[5] } { ...props } />
-        <Card number={ hand[6] } { ...props } />
-        <Card number={ hand[7] } { ...props } />
+        <Card number={ hand[0] } { ...props } draw={draw} />
+        <Card number={ hand[1] } { ...props } draw={draw} />
+        <Card number={ hand[2] } { ...props } draw={draw} />
+        <Card number={ hand[3] } { ...props } draw={draw} />
+        <Card number={ hand[4] } { ...props } draw={draw} />
+        <Card number={ hand[5] } { ...props } draw={draw} />
+        <Card number={ hand[6] } { ...props } draw={draw} />
+        <Card number={ hand[7] } { ...props } draw={draw} />
       </div>
     </div>
   );

@@ -8,7 +8,6 @@ export function drop(event, data) {
   if (card) {
     let parent = getParent(event.target)
     changeNumber(card, parent.childNodes[0].childNodes[0].childNodes[0].innerHTML);
-    parent.style.transform = 'translate(0, 0)';
     card.style.backgroundColor = 'white';
     return true;
   } else {

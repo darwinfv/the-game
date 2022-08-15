@@ -2,13 +2,18 @@ import 'css/Card.css'
 import Draggable from 'react-draggable';
 import { click, drop, track } from 'eventHandlers';
 
-function Card({ number, up, down, draggable, id }) {
+function Card({ number, up, down, draggable, draw }) {
   return (
     <Draggable
       onDrag={track}
       disabled={draggable ? false : true}
       onStart={click}
-      onStop={drop}
+      onStop={(event, data) => {
+        let res = drop(event, data);
+        if (res) {
+          draw(number);
+        }
+      }}
     >
       <div className='arrow'>
         {
