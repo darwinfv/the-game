@@ -17,9 +17,6 @@ export function drop(event, data) {
 }
 
 export function track(event, data) {
-  // setPosition({ x: data.x, y: data.y });
-  // console.log(e.pageX, e.pageY);
-
   let card = checkHover(event.pageX, event.pageY)
   if (card) {
     flicker(card);
