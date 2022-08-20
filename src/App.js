@@ -1,4 +1,4 @@
-import 'App.css';
+import 'css/App.css';
 import Card from 'components/Card';
 import { generateDeck } from 'helpers';
 import { useState } from 'react';
