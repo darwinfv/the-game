@@ -44,14 +44,11 @@ function App() {
         <Card number={100} down />
       </div>
       <div id='player'>
-        <Card number={ hand[0] } { ...props } draw={draw} />
-        <Card number={ hand[1] } { ...props } draw={draw} />
-        <Card number={ hand[2] } { ...props } draw={draw} />
-        <Card number={ hand[3] } { ...props } draw={draw} />
-        <Card number={ hand[4] } { ...props } draw={draw} />
-        <Card number={ hand[5] } { ...props } draw={draw} />
-        <Card number={ hand[6] } { ...props } draw={draw} />
-        <Card number={ hand[7] } { ...props } draw={draw} />
+        {
+          hand.map((card) => {
+            return <Card number={ card } key={card} { ...props } draw={draw} />
+          })
+        }
       </div>
     </div>
   );
