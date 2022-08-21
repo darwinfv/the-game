@@ -2,7 +2,7 @@
 
 
 Bugs
-
+- Dragging off screen causes unexpected behaviour. Catch and handle them better.
 
 Features
 - Put cards from hand back in place if dropped randomly
