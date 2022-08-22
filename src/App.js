@@ -1,6 +1,6 @@
 import 'css/App.css';
 import Card from 'components/Card';
-import { generateDeck } from 'helpers';
+import { generateDeck, validate } from 'helpers';
 import { useState } from 'react';
 
 const props = {
@@ -33,6 +33,10 @@ function App() {
     let player = hand;
     player[index] = card;
     setHand(player.slice());
+
+    if (!validate(player)) {
+      console.log('rip')
+    }
   }
 
   return (
