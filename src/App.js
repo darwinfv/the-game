@@ -20,7 +20,6 @@ function App() {
 
   function draw(number) {
     let card = deck.pop();
-    setDeck(deck);
     
     let index = 0;
     for (let i = 0; i < hand.length; i++) {
@@ -31,11 +30,21 @@ function App() {
     }
 
     let player = hand;
-    player[index] = card;
+
+    if (card) {
+      setDeck(deck);
+      player[index] = card;
+    } else {
+      player.splice(index, 1);
+    }
     setHand(player.slice());
 
     if (!validate(player)) {
-      console.log('rip')
+      if (player.length === 0) {
+        alert('You Win!');
+      } else {
+        alert('You Lose.');
+      }
     }
   }
 

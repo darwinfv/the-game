@@ -1,5 +1,6 @@
 - Wobble animation when card is picked up
-- Cards disappear when deck ends
+- Animation for drawing
+- Show deck of cards remaining
 
 Bugs
 - Dragging off screen causes unexpected behaviour. Catch and handle them better.
