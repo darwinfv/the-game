@@ -11,7 +11,7 @@ function Card({ number, up, down, draggable, draw }) {
       onStop={(event, data) => {
         let res = drop(event, data);
         if (res) {
-          draw(number);
+          draw(number, res);
         }
       }}
     >

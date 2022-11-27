@@ -1,5 +1,6 @@
 import 'css/App.css';
 import Card from 'components/Card';
+import { changeNumber } from 'eventHandlers';
 import { generateDeck, validate } from 'helpers';
 import { useState } from 'react';
 
@@ -17,10 +18,31 @@ function App() {
 
   const [deck, setDeck] = useState(cards);
   const [hand, setHand] = useState(player);
+  const [undo, setUndo] = useState([]);
 
-  function draw(number) {
+  function undoOne() {
+    let last = undo.pop();
+    setUndo(undo.slice());
+
+    setDeck(last.deck);
+    console.log(deck.length)
+    setHand(last.hand);
+    changeNumber(document.getElementsByClassName('card')[last.position], last.number)
+  }
+
+  function draw(number, stack) {
+    console.log(deck.length)
     let card = deck.pop();
+    let step = {
+      hand: hand.slice(),
+      deck: deck.slice(),
+      number: stack[0],
+      position: stack[1]
+    };
     
+    undo.push(step);
+    setUndo(undo.slice());
+
     let index = 0;
     for (let i = 0; i < hand.length; i++) {
       if (hand[i] === number) {
@@ -61,6 +83,13 @@ function App() {
           hand.map((card) => {
             return <Card number={ card } key={card} { ...props } draw={draw} />
           })
+        }
+      </div>
+      <div id='controls'>
+        {
+          <button onClick={undoOne}>
+            Undo
+          </button>
         }
       </div>
     </div>
